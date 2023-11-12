@@ -1,18 +1,38 @@
 <html>
     <head>
         <title>Correction Page</title>
+        <style>
+            .error   { color: red; }
+            .success { color: black; }
+        </style>
     </head>
     <body>
 
         <h3 style="color:black">Correction Results</h3>
 
+        <p>On this page, we show you the correction of original text.</p>
+        <p>Errors are marked in red, corrections - in green</p>
+
         <h2 style="color:black">Original text</h2>
 
-        <p>{{ original }}</p>
+        <table class="original">  
+            <tr>
+            {% for word, index in original %}
+            <td><p {% if index == '1' %} style="color:red" {% endif %}> {{ word }}</p></td>
+            {% endfor %}
+            </tr>
+        </table> 
 
         <h2 style="color:black">Correction</h2>
 
-        <p>{{ correction }}</p>
+        <table class="correction">  
+            <tr>
+            {% for word, index in correction %}
+            <td><p {% if index == '1' %} style="color:green" {% endif %}> {{ word }}</p></td>
+            {% endfor %}
+            </tr>
+        </table>   
+        
         
     </body>
 </html>
