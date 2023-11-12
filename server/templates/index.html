@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Spelling Corrector</title>
+    </head>
+    <body>
+        <h3>Spelling Corrector</h3>
+
+        <p>This simple app takes text as input and corrects spelling in it. 
+            The app uses  <a href="https://huggingface.co/ai-forever/T5-large-spell">T5-large model for spelling correction</a> 
+        </p>
+
+        <h4>Input your text</h4>
+        <p>Input you text in the input window below:</p>
+
+        <form action = "/correction" method = "post"
+                enctype="multipart/form-data">
+
+            <textarea type="input" name="input_text" cols="40" rows="5"></textarea>
+            <br><br>
+
+            <button type="sumbit">Correct errors!</button>
+        </form>
+       
+    </body>
+</html>
